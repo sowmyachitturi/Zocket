@@ -4,7 +4,7 @@ import React from "react";
 import TaskCard from "@/components/TaskCard";
 import "./tasks.css";
 import Chatbot from "@/components/chatbot";
-import { Task, tasks } from "@/lib/tasks"; // Import from the new file
+import { tasks } from "@/lib/tasks"; // Import from the new file
 
 const Tasks: React.FC = () => {
   return (

@@ -4,7 +4,8 @@ import React from "react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import "./home.css";
-import { tasks, Task } from "@/lib/tasks"; // Import from the new file
+import { tasks, Task } from "@/lib/tasks"; 
+import { TooltipItem } from 'chart.js';
 
 // Register Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -31,7 +32,7 @@ const dueTodayTasks = tasks.filter((task) => {
 
 // Sample latest tasks (now including priority and dueDate)
 const latestTasks = tasks.slice(0, 5).map((task: Task) => ({
-  id: `#TASK${task.id}`,
+  id: `TASK${task.id}`,
   title: task.title,
   description: task.description, // Include description if needed, or remove if not used
   priority: task.priority,
@@ -61,7 +62,7 @@ const Home: React.FC = () => {
       },
       tooltip: {
         callbacks: {
-          label: (context: any) => `${context.label}: ${context.raw} tasks`,
+          label: (context: TooltipItem<"doughnut">) => `${context.label}: ${context.raw} tasks`,
         },
       },
     },
