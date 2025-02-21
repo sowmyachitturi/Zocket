@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.task-card {
+  @apply rounded-lg border p-4 shadow-sm hover:shadow-md transition-shadow duration-200;
+}
+
+.task-card.pending {
+  @apply bg-yellow-50 border-yellow-200;
+}
+
+.task-card.in-progress {
+  @apply bg-blue-50 border-blue-200;
+}
+
+.task-card.completed {
+  @apply bg-green-50 border-green-200;
+}
+
+.task-card h3 {
+  @apply text-lg font-semibold text-gray-800 mb-2;
+}
+
+.task-card p {
+  @apply text-gray-600 mb-3;
+}
+
+.task-card .status {
+  @apply inline-block px-2 py-1 rounded-full text-sm font-medium;
+}
+
+.task-card.pending .status {
+  @apply text-yellow-600 bg-yellow-100;
+}
+
+.task-card.in-progress .status {
+    @apply text-black bg-gray-200;
+  }
+
+.task-card.completed .status {
+  @apply text-green-600 bg-green-100;
+}

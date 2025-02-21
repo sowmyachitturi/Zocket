@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbar {
+  @apply flex items-center justify-between gap-4 p-6 bg-gray-800 text-white shadow-md sticky top-0 z-50;
+}
+
+.navbar .logo h1 {
+  @apply text-2xl font-bold;
+}
+
+.navbar .nav-links {
+  @apply flex space-x-6;
+}
+
+.navbar .nav-links li {
+    @apply list-none text-lg;
+}
+
+.navbar .nav-links a {
+  @apply text-white hover:text-gray-300 transition-colors duration-200;
+}
